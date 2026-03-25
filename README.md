@@ -1,5 +1,5 @@
 <p align="center">
-# Scientia
+<h1 align="center">Scientia</h1>
   <img src="scientia.png" alt="Scientia cover" width="880">
 </p>
 
