@@ -1,8 +1,8 @@
 <p align="center">
+# Scientia
   <img src="scientia.png" alt="Scientia cover" width="880">
 </p>
 
-# Scientia
 
 Turn scientific sources (OpenAPI specs, papers/DOIs, PyPI packages, GitHub repos, PDFs, web pages, CLIs, or plain text) into **skill folders** you can **hand to an LLM agent**—the same shape used by **ScienceClaw** and familiar from **Anthropic**- and **OpenAI**-style agent setups: a `SKILL.md` the model reads for instructions, a `scripts/*_client.py` entrypoint that prints **JSON on stdout** (easy for a harness to parse), plus `scripts/USAGE.md` for operational detail and a local registry entry.
 
