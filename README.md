@@ -1,5 +1,6 @@
 <p align="center">
-<h1 align="center">Scientia</h1>
+  <h1 align="center">Scientia</h1>
+  <b>Turn scientific sources into ready-to-use skills for LLM agents and <a href="https://github.com/lamm-mit/scienceclaw/tree/main" target="_blank">ScienceClaw </a>.</b><br>
   <img src="scientia.png" alt="Scientia cover" width="880">
 </p>
 
