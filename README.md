@@ -5,7 +5,7 @@
       Turn scientific sources into ready-to-use skills for LLM agents and
       <a href="https://github.com/lamm-mit/scienceclaw/tree/main" target="_blank" style="text-decoration: underline;">
         ScienceClaw
-      </a>.
+      </a>
     </strong>
   </div>
   <img src="scientia.png" alt="Scientia cover" width="880">
