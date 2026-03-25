@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="outputs/scientia.png" alt="Scientia cover" width="880">
+  <img src="scientia.png" alt="Scientia cover" width="880">
 </p>
 
 # Scientia
@@ -45,6 +45,10 @@ Set `ANTHROPIC_API_KEY` for LLM-powered extraction (`scientia add`).
 
 Full command reference, source types, recipes, troubleshooting: **[SCIENTIA_CLI.md](SCIENTIA_CLI.md)**.
 
+## License
+
+Apache-2.0. See `LICENSE`.
+
 ## Publish to ClawHub
 
 Skills are normal folders with `SKILL.md`. To upload one to [ClawHub](https://clawhub.ai):
@@ -56,12 +60,3 @@ scientia push-clawhub YOUR_TOOL_NAME --version 1.0.0 --changelog "Notes here"
 ```
 
 See the **`scientia push-clawhub`** section in [SCIENTIA_CLI.md](SCIENTIA_CLI.md) for `--skill-path`, `--slug`, `--dry-run`, and other options.
-
-## Repo layout
-
-- `src/` — core code (`src/scientia`)
-- `runs/` — experiments
-- `data/` — raw/processed data
-- `notebooks/` — exploratory work
-- `outputs/` — figures/results (includes `outputs/scientia.png`)
-- `paper/` — optional manuscript assets
