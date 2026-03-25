@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+*.db
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.hypothesis/
+
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+.idea/
+.vscode/
+.cursor/
+
+# local tool/workspace state
+.scientia/
+.python-version
+.envrc
+
+# keep tests private
+tests/
