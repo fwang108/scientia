@@ -2,33 +2,33 @@
   <h1 align="center">Scientia</h1>
   <div align="center" style="font-size: 1.15em; margin-bottom: 10px;">
     <strong>
-      Turn scientific sources into ready-to-use skills for LLM agents and
+      Skill anything scientific—papers, APIs, repos, packages—into agent-ready folders for
       <a href="https://github.com/lamm-mit/scienceclaw/tree/main" target="_blank" style="text-decoration: underline;">
         ScienceClaw
       </a>
+      and beyond.
     </strong>
   </div>
   <img src="scientia.png" alt="Scientia cover" width="880">
 </p>
 
+**One pipeline, many sources.** Point Scientia at an OpenAPI spec, a DOI or PDF, a PyPI name, a GitHub URL, a web page, a CLI, or plain text—**out comes a skill folder** your LLM can actually use: the same layout as **ScienceClaw** and the usual **Anthropic** / **OpenAI** agent pattern—`SKILL.md` for the model, `scripts/<tool>_client.py` that prints **JSON on stdout** for harnesses, `scripts/USAGE.md` for humans who peek under the hood, plus a local registry entry.
 
-Turn scientific sources (OpenAPI specs, papers/DOIs, PyPI packages, GitHub repos, PDFs, web pages, CLIs, or plain text) into **skill folders** you can **hand to an LLM agent**—the same shape used by **ScienceClaw** and familiar from **Anthropic**- and **OpenAI**-style agent setups: a `SKILL.md` the model reads for instructions, a `scripts/*_client.py` entrypoint that prints **JSON on stdout** (easy for a harness to parse), plus `scripts/USAGE.md` for operational detail and a local registry entry.
+No guessing the interface: parameters, examples, and caveats live in prose and flags so you map them to **tools / functions** or shell straight to the client.
 
-Agents do not need to guess the interface: parameters, examples, and limitations are spelled out in prose and flags so you can map them to **tool / function** definitions or let the agent shell out to the client script.
+### Skills that teach, not just wrap
 
-### Skills as operational documentation
+Each artifact is meant to carry **how to run the real method**, not a hollow JSON shell:
 
-The goal is that each skill carries **what people need to use the method**, not only a JSON façade:
+- **`SKILL.md`** — story, links (paper, repo), parameters, and **“How to run the method (from the source)”** when extraction can fill it (install, commands, prerequisites). Thin extraction? Edit this section by hand.
+- **`scripts/USAGE.md`** — the same operational notes beside the code.
+- **`scripts/<tool>_client.py`** — structured JSON for harnesses; extend with `subprocess` or imports once `USAGE.md` commands are validated.
 
-- **`SKILL.md`** — description, links (paper, repo), parameters, and a **“How to run the method (from the source)”** section filled from LLM extraction when the source allows it (install steps, commands, prerequisites). Maintainers can edit this section if extraction was thin.
-- **`scripts/USAGE.md`** — the same operational notes in the `scripts/` folder for agents and humans who look there first.
-- **`scripts/<tool>_client.py`** — structured JSON for agent harnesses; you can extend it to call upstream CLIs with `subprocess` once the commands in `USAGE.md` are validated.
+Extraction asks for **`implementation_notes`** (Markdown). GitHub sources use a dedicated template so README install/run lines land in the skill. Scientia **generates** these files; command correctness still rides on upstream docs and your review.
 
-Extraction prompts ask for **`implementation_notes`** (Markdown) and, for **GitHub**, use a dedicated template so README install/run lines are pulled into the skill. Scientia is the **repo that generates those artifacts**; correctness of commands still depends on the upstream source and human review.
+### What “it runs” really means
 
-### What “running” the client means
-
-Verifying **`scientia add`** only checks: **exit 0 + valid JSON on stdout**. That is enough for agents and pipelines, but it is **not** proof that a paper, product, or GitHub project is actually invoked.
+`scientia add` verification is deliberately minimal: **exit 0 + valid JSON on stdout**. Great for agents and CI—**not** a guarantee that a paper’s code or a vendor API fired for real.
 
 | Source | Typical reality |
 |--------|------------------|
@@ -59,7 +59,7 @@ Apache-2.0. See `LICENSE`.
 
 ## Publish to ClawHub
 
-Skills are normal folders with `SKILL.md`. To upload one to [ClawHub](https://clawhub.ai):
+Skills are normal folders with `SKILL.md`. Ship one to [ClawHub](https://clawhub.ai):
 
 ```bash
 npm i -g clawhub
